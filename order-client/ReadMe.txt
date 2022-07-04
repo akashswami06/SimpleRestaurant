@@ -1,10 +1,20 @@
-HOW TO INSTALL?
-Download Kafka
+# API's to for Order
 
-# Start the ZooKeeper service
-$ bin/zookeeper-server-start.sh config/zookeeper.properties
+## Create a new order
 
-Open another terminal session and run:
+### Request
 
-# Start the Kafka broker service
-$ bin/kafka-server-start.sh config/server.properties
+`POST /api/createOrder/`
+
+    {
+        "tableNumber":1,
+        "deviceId":"tablet1",
+        "menuItem": [{
+             "itemName": "veg-curry",
+             "quantity":2
+         },
+         {
+             "itemName": "roti",
+             "quantity":2
+         }]
+    }
