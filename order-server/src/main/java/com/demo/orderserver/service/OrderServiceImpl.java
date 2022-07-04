@@ -3,6 +3,8 @@ package com.demo.orderserver.service;
 import com.demo.orderserver.model.entity.Order;
 import com.demo.orderserver.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -26,13 +28,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Flux<Order> getAllOrder(){
-        return null;
+        return (Flux<Order>) orderRepository.findAll();
     }
 
-    @Override
-    public Mono<Order> getItemByTableNumber(String tableNumber, String item) {
-        return null;
-    }
 
+    public Mono<Order> getItemByTableNumber(int tableNumber) {
+        return (Mono<Order>) orderRepository.findAllByTableNumber(tableNumber);
+    }
 
 }

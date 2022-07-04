@@ -12,6 +12,4 @@ public interface OrderService{
 
     public Flux<Order> getAllOrder();
 
-    public Mono<Order> getItemByTableNumber(String tableNumber, String item);
-
 }
