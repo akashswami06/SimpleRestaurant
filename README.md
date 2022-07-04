@@ -17,6 +17,7 @@ and process order
 1. Run Kafka and Zookeeper using Docker from Parent directory
 
 ```docker-compose up```
+
 2. Start order-client microservice
 
 ```mvn spring-boot:run```
